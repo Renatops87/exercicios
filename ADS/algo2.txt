@@ -1,0 +1,269 @@
+Um funcionário de uma empresa recebe, anualmente, aumento salarial. Sabe-se que: a) Esse funcionário contratado em 2005, com salário inicial de R$1.000,00; b) Em 2006, ele recebeu aumento de 1,5% sobre seu salário inicial; c) A partir de 2007 (inclusive), os aumentos salariais sempre corresponderam ao dobro do percentual do ano anterior. Faça um programa que determine o salario atual desse funcionário.
+
+Algotitmo salario
+	var salario, percentual: Real
+	i: Inteiro
+Inicio
+	percentual <- 1.5
+	salario <- 1000
+	para (i = 2006; i <= 2018; i++)
+		se(i = 2006) então
+			salario = salario + salario * percentual/100;
+		senão
+		  	salario = salario + (salario * ((percentual * 2)/100)))
+		fim_se
+	fim_para
+	escreva("O salário atual é: ", salario)
+
+fim;
+
+Faça um programa para calcular a área de um triângulo e que não permita a entrada de dados inválidos, ou seja, medidas menores ou iguais a 0.
+
+Algoritmo areatriangulo
+	var lado, i, soma: Inteiro
+	    area: Real
+Inicio	
+	i <- 1												
+	soma <- 0											
+	Escreva("Cálculo área triângulo retângulo")							
+	Enquanto(i <= 2) faca
+		Escreva("Digite a medida do lado ", i , ":")						
+		Leia(lado)										
+		Se((lado = 0) ou (lado < 0)) então
+			Escreva("Medida inválida")							
+		Senão
+			soma = soma + lado
+			i <- i + 1
+		Fim_se
+	Fim_enquanto
+	
+	area <- soma / 2
+	Escreva("O valor da área do triangulo é: ", area)  
+Fim
+
+Faça um programa que receba o salário de um funcionário chamado Carlos. Sabe-se que outro funcionário, João, tem salário equivalente a um terço do salário de Carlos. Carlos aplicará seu salário integralmente na caderneta de poupança, que rende 2% ao mê4s, e João aplicará seu salário integralmente no fundo de renda fixa, que rende 5% ao mês. O programa deverá calcular e mostrar a quantidade de meses necessários para que o valor pertencente a João iguale ou ultrapasse o valor pertencente a Carlos.
+
+Algoritmo poupanca
+	var salariocarlos, salariojoao, valorcarlos, valorjoao: real;
+	    meses: Inteiro
+Inicio
+	Escreva("Digite o valor do salario do Carlos: ")
+	Leia(salariocarlos)
+	salariojoao <- salariocarlos / 3
+	valorcarlos <- 0
+	valorjoao <- 0
+	meses <- 0
+	Enquanto (valorcarlos > valorjoao) faca
+		valorcarlos <- salariocarlos * 0.02
+		valorjoao   <- salariojoao * 0.05
+		meses <- meses + 1
+	Fim_enquanto
+	Escreva("Quantidade de meses para que valor de João alcance ou ultrapasse Carlos: ", meses) 	
+Fim
+	    
+
+Faça um programa que leia um conjunto não determinado de valores e mostre o valor lido, seu quadrado, seu cubo e a sua raiz quadrada. Finalize a entrada de dados com um valor negativo ou zero.
+
+Algoritmo valores
+	var num: Inteiro
+	    raiz: Real
+Inicio
+	Repita
+		Escreva("Digite o numero: ")
+		Leia(num)
+		Escreva("Numero Digitado: ", num)
+		Escreva("Quadrado do numero: ", SQR(num))
+		Escreva("Cubo do numero: ", num^3)
+		Escreva("Quadrado do numero: ", SQRT(num))
+	Até_que(num <= 0)
+
+Fim
+
+Faça um programa que leia um valor N inteiro e positivo. Calcule e mostre o valor de E, conforme a fórmula a seguir:E = 1 + 1/1! + 1/2! + 1/3!+ ...+ 1/N!
+
+Algoritmo valorE
+	var e: Real
+	    n, i, f: Inteiro
+Inicio
+	e <- 1
+	f <- 1
+	cont <- 1
+	Escreva("Digite o valor do Inteiro N: ")
+	Leia(n)
+	Enquanto (cont <= n) faça
+		para i de n até 1 passo -1 faça
+			f = f * i
+		fim_para
+		e = e + 1/f	
+		cont++
+	fim_enquanto
+	Escreva("Valor de E: ", e)	
+fim
+Faça um programa que receba vários números, calcule e mostre: * a soma dos números digitados. * a quantidade de números digitados. * a média dos números digitados. * o maior número digitado. * o menor número digitado. * a média dos números pares. * a porcentagem dos números ímpares entre todos os números digitados. Finalize a entrada de dados com a digitação do número 30.000.
+
+Algoritmo valores
+	var num, soma, qtdnum, maior, menor, cont_par, porcent_impar : Inteiro
+	    raiz, media, media_pares: Real
+Inicio
+	soma <- 0
+	maior <- 0
+	menor <- 9999999999999
+	cont_par <- 0
+	qtd_num <- 0
+	porcent_impar <- 0
+	media <- 0
+	media_pares <- 0
+	Repita
+		Escreva("Digite o numero: ")
+		Leia(num)
+		soma <- soma + num
+		qtd_num <- qtd_num + 1
+		Se(num > maior){
+			maior <- num
+		}
+		maior <- num
+		Se(num < menor){
+			menor <- num
+		}
+		maior <- num
+		Se(num mod 2 = 0)
+			cont_par <- cont_par + 1 
+		fim_se
+	Até_que(num = 30000)
+	Escreva("Soma: ", soma)
+	Escreva("Qtd. de Numeros Digitados: ", qtd_num)
+	Escreva("Média de Numeros Digitados: ", soma /qtd_num)
+	Escreva("Maior Numero Digitado: ", maior)
+	Escreva("Menor Numero Digitado: ", menor)
+	Escreva("Média dos pares: ", (cont_par * 100 )/qtd_num)
+Fim
+
+1. Escreva um algoritmo que leia 20 nomes e imprima o primeiro caractere de cada nome.
+
+Algoritmo lerletras
+	Var nome: vetor[1..30] de caractere
+	       i: inteiro
+Inicio
+	Para i de 1 até 20 passo 1 faça
+		Escreva("Digite o nome: ")
+		Leia(nome)
+	fim_para
+	Para i de 1 até 20 passo 1 faça
+		Escreva("Primeiro Caracter do nome ",i,":", nome[1])
+	fim_para
+Fim  
+
+2. Formule um algoritmo que entre com o nome do aluno e as notas de quatro
+provas de 20 alunos. Imprima nome, nota1, nota2, nota3, nota4 e média de cada
+aluno e informe a média geral da turma.
+
+Algoritmo notaalunos
+	Var nota1, nota2, nota3, nota4, mediaAluno, mediaTot, somaB : Real
+	    nome: caractere
+Inicio
+	soma <- 0
+	Para i de 1 até 20 passo 1 faça
+		Escreva("Digite o nome do aluno ", i)
+		Leia(nome)
+		Escreva("Digite a nota ", i)
+		Leia(nota1)
+		Escreva("Digite o nome do aluno: ", i)
+		Leia(nota2)
+		Escreva("Digite o nome do aluno: ", i)
+		Leia(nota3)
+		Escreva("Digite o nome do aluno: ", i)
+		Leia(nota4)
+		mediaAluno = (nota1+nota2+nota3+nota4)/4
+		soma = soma + nota1 + nota2 + nota3 + nota4
+		Escreva("Média do Aluno: ", media)
+	fim_para
+	mediaTot = soma / 20
+	Escreva ("Média da Turma: ", media)	
+Fim
+	
+3. Escreva um algoritmo que leia a quantidade de números que se deseja digitar.
+Em seguida, leia esses números e encontre o maior e o menor.
+
+Algoritmo numeros
+	Var num, maior, menor, cont, qtdNum: inteiro
+Inicio
+	cont <- 1;
+	Escreva ("Digite a quantidade de numeros que deseja digitar: ")
+	leia(qtdNum)
+	Enquanto (cont <= qtdNum) faça
+		Escreva ("Digite um numero: ")
+		Leia (num)
+		se(cont = 1)
+			maior <- num
+			menor <- num
+		senão
+			se(num > maior) então
+				maior = num
+			senão
+				se (num < menor) então
+					menor = num
+				fim_se
+			fim_se
+		fim_se
+		cont <- cont + 1
+	fim_enquanto
+	Escreva("Maior numero: ", maior)
+	Escreva("Menor numero: ", menor)
+Fim
+
+5. Apresente todos os números divisíveis por 5 que sejam menores que 200.
+
+Algoritmo divisivelpor5
+	Var div, i: inteiro
+Inicio
+	div <- 0
+	Para i de 0 até 199 passo 5 faça
+		Escreva (i)			
+	fim_para
+Fim 
+
+8. Uma indústria produz e vende vários produtos e para cada um deles têm-se os
+seguintes dados: nome, quantidade produzida e quantidade vendida. Formule
+um algoritmo que:
+¦¦ Leia a quantidade de produtos que a empresa possui.
+¦¦ Imprima nome e quantidade em estoque para os produtos com estoque menor
+que 30.
+¦¦ Imprima nome do produto com maior quantidade em estoque.
+
+Algoritmo numeros
+	Var qtdest, est_maior, est_menor, cont, qtdProd: inteiro
+	    nome, prod_maior_est, prod_menor_est: caractere
+Inicio
+	cont <- 1;
+	Escreva ("Digite a quantidade de Produtos: ")
+	leia(qtdProd)
+	Enquanto (cont <= qtdProd) faça
+		Escreva ("Digite o Nome do Produto: ")
+		Leia(nome)
+		Escreva ("Digite a quantidade em estoque: ")
+		Leia(qtdest)
+		se(cont = 1) então
+			est_maior <- qtdest
+			est_menor <- qtdest
+		senão
+			se(qtdest > est_maior) então
+				est_maior <- qtdest
+				prod_maior_est <- nome
+			senão
+				se(qtdest < est_menor) então
+					est_menor <- qtdest
+					prod_menor_est <- nome
+				fim_se
+			fim_se
+		fim_se
+		se(qtdest < 30) então
+			Escreva("Produto: ", nome)
+			Escreva("Qtd estoque: ", qtdest)
+		fim_se
+		cont <- cont + 1
+	fim_enquanto
+	Escreva("Produto com maior estoque: ", prod_maior_est, " Qtd: ", est_maior)
+	Escreva("Produto com menor estoque: ", prod_menor_est, " Qtd: ", est_menor)
+Fim
+
+9. Elabore uma algoritmo que imprima todas as tabuadas do 1 ao 10.
