@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DOM</title>
+  <style>
+    .ativo {
+      width: 100px;
+      height: 100px;
+      background-color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <button id="botao"> Click</button>
+    <div class="box"></div>
+    <input type="text" name="nome">
+    <button onclick="adicionar()" id="adiciona">Adicionar</button>
+  </div>
+  
+
+  <script>
+    var boxElement = document.querySelector('.box');
+    var container = document.querySelector('#app');
+    var botao = document.querySelector('#botao');
+    var caixa;
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    botao.onclick = function () {
+      caixa = document.createElement('div');
+      caixa.setAttribute('class','ativo');
+
+      caixa.onmousemove = function() {
+        var newColor = getRandomColor();
+        caixa.style.backgroundColor = newColor;
+      }
+
+      container.appendChild(caixa);
+    }
+
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+
+    var inputElement = document.querySelector('input[name=nome]');
+    var btnElement = document.querySelector('#adiciona');
+    var listaNomes = document.createElement('ul');
+
+    function adicionar() {
+      var text = inputElement.value;
+      nomes.push(text);
+      
+      addItem(text);
+      inputElement.value = "";
+    }
+
+    function addItem(text) {
+      var itens = document.createElement('li');
+      var name = document.createTextNode(text);
+
+      itens.appendChild(name);
+      listaNomes.appendChild(itens);
+    }
+
+    nomes.forEach((nome, id) => {
+      addItem(nome);
+    });
+    
+    container.appendChild(listaNomes);
+
+  </script>
+</body>
+
+</html>
