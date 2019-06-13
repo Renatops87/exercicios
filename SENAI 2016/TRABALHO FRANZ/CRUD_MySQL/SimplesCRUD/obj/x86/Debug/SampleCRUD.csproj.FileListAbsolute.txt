@@ -1,0 +1,12 @@
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\bin\Debug\SampleCRUD.exe.config
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\bin\Debug\SampleCRUD.exe
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\bin\Debug\SampleCRUD.pdb
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.csprojResolveAssemblyReference.cache
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.Form1.resources
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.Properties.Resources.resources
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.csproj.GenerateResource.Cache
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.exe
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_in_C_2255303252014\SampleCRUD\obj\x86\Debug\SampleCRUD.pdb
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_MySQL\SampleCRUD\bin\Debug\SampleCRUD.exe.config
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_MySQL\SampleCRUD\obj\x86\Debug\SampleCRUD.exe
+C:\Users\user\Downloads\_programas_source_avaliacao\CRUD_MySQL\SampleCRUD\obj\x86\Debug\SampleCRUD.pdb
