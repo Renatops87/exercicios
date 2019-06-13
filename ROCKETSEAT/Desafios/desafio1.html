@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desafios</title>
+</head>
+<body>
+  
+  <script>
+    
+    var endereco = {
+      rua: "Rua dos Pinheiros",
+      numero: 1293,
+      bairro: "Centro",
+      cidade: "São Paulo",
+      uf: "SP"
+    }
+
+    function mostraEndereco() {
+      return console.log('O usuário mora em ' + endereco.cidade + ' / ' + endereco.uf + ', no bairro ' + endereco.bairro + ', na rua \"' + endereco.rua + '\" com nº ' + endereco.numero);
+    }
+
+    mostraEndereco();
+
+    function pares(x, y) {
+      for (var i = x; i < y; i++) {
+          if (i % 2 == 0) {
+            console.log(i);
+          }
+      }
+    }
+
+    // pares(32, 321);
+
+    function temHabilidade(skills) {
+      var elemento = "Javascript";
+      var test = skills.indexOf(elemento);
+      if (test >= 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    var skills = ["Javascript", "ReactJS", "React Native"];
+    var habilidade = temHabilidade(skills);
+    console.log(habilidade);
+
+    function experiencia(anos) {
+      var xp;
+      if (anos < 1) {
+        xp = 'Iniciante'
+      } else if (anos < 3) {
+        xp = 'Intermediario';
+      } else if (anos < 6) {
+        xp = 'Avançado';
+      } else {
+        xp = 'Jedi Master';
+      }
+      return xp;
+    }
+
+    var anosEstudo = 7;
+    var xp = experiencia(anosEstudo);
+    console.log(xp);
+
+    var usuarios = [
+      {
+        nome: "Diego",
+        habilidades: ["Javascript", "ReactJS", "Redux"]
+      },
+      {
+        nome: "Gabriel",
+        habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+      }
+    ];
+
+    function users() {
+      for(let value of usuarios) {
+        console.log("O " + value.nome + " possui as habilidades: " + value.habilidades.join(', '));
+      }
+    }
+
+    users();
+
+  </script>
+</body>
+</html>
